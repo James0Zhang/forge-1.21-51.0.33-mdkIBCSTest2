@@ -23,4 +23,7 @@ public class ModItems {
     public static final RegistryObject<Item> Gloryfang = ITEMS.register("ranger",
             ()-> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> Emberweaver = ITEMS.register("ranger",
+            ()-> new Item(new Item.Properties()));
+
 }
