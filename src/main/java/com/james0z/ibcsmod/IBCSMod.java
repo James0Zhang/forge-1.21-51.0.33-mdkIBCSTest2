@@ -55,7 +55,9 @@ public class IBCSMod
     {
         if(event.getTabKey() == CreativeModeTabs.COMBAT){
             event.accept(ModItems.warrior);
-            event.accept(ModItems.Ranger);}
+            event.accept(ModItems.Ranger);
+            event.accept(ModItems.Gloryfang);
+            event.accept(ModItems.Emberweaver);}
 
         if(event.getTabKey() == CreativeModeTabs.SPAWN_EGGS){
             }
