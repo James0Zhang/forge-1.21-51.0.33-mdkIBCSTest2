@@ -16,8 +16,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> warrior = ITEMS.register("warrior",
             ()-> new Item(new Item.Properties()));
-
     public static final RegistryObject<Item> Ranger = ITEMS.register("ranger",
+            ()-> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> GloryFang = ITEMS.register("gloryfang",
             ()-> new Item(new Item.Properties()));
 
 }

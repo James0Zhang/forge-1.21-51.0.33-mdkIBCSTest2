@@ -1,4 +1,7 @@
 {
   "item.ibcsmod.warrior": "Warrior",
-  "item.ibcsmod.ranger": "Ranger"
+  "item.ibcsmod.ranger": "Ranger",
+  "item.ibcsmod.gloryfang": "Gloryfang",
+
+  "creativetab.ibcsmod.character_mod": "Character"
 }

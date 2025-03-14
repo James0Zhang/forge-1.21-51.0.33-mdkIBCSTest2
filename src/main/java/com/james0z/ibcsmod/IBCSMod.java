@@ -1,5 +1,6 @@
 package com.james0z.ibcsmod;
 
+import com.james0z.ibcsmod.item.ModCreativeNewTabs;
 import com.james0z.ibcsmod.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -37,6 +38,7 @@ public class IBCSMod
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
+        ModCreativeNewTabs.register(modEventBus);
         ModItems.register(modEventBus);
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -55,7 +57,8 @@ public class IBCSMod
     {
         if(event.getTabKey() == CreativeModeTabs.COMBAT){
             event.accept(ModItems.warrior);
-            event.accept(ModItems.Ranger);}
+            event.accept(ModItems.Ranger);
+            event.accept(ModItems.GloryFang);}
 
         if(event.getTabKey() == CreativeModeTabs.SPAWN_EGGS){
             }
