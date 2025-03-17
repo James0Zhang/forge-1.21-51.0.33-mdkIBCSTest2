@@ -1,6 +1,8 @@
 package com.james0z.ibcsmod.item;
 
 import com.james0z.ibcsmod.IBCSMod;
+import com.james0z.ibcsmod.item.custom.GloryfangItem;
+import com.james0z.ibcsmod.item.custom.warriorItem;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -17,12 +19,13 @@ public class ModItems {
     }
 
     public static final RegistryObject<Item> warrior = ITEMS.register("warrior",
-            ()-> new Item(new Item.Properties()));
+            ()-> new warriorItem(new Item.Properties().durability(64)));
     public static final RegistryObject<Item> Ranger = ITEMS.register("ranger",
             ()-> new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> GloryFang = ITEMS.register("gloryfang",
-            () -> new SwordItem(ModTier.Warrior, new Item.Properties())
-                    .createAttributes(Tiers.WOOD, 9, -2.8F));
+            () -> new GloryfangItem( new Item.Properties()
+            .attributes(SwordItem.createAttributes(ModTier.Warrior, 9, -2.8F))));
 
 
 }
