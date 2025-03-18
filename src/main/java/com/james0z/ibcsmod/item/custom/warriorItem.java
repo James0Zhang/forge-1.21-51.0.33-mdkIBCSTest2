@@ -30,6 +30,18 @@ public class warriorItem extends Item {
         }
         return true;
     }
+    public void equipCustomHelmet(Player player) {
+        // Create the helmet item
+        ItemStack helmet = new ItemStack(ModItems.Warrior_Crown.get());
+        ItemStack chestplate = new ItemStack(ModItems.Warrior_Chestplate.get());
+
+        // Set the helmet in the player's armor slot (slot 3 for helmet)
+        player.getInventory().armor.set(3, helmet);
+        player.getInventory().armor.set(2, chestplate);
+
+        // Notify the player (optional)
+        player.displayClientMessage(Component.literal("You are now equipped with the armor!"), true);
+    }
 
     @Override
     public InteractionResult useOn(UseOnContext pContext) {
@@ -47,6 +59,9 @@ public class warriorItem extends Item {
             if (hasGloryFang(player)) {
                 player.getInventory().add(new ItemStack(ModItems.GloryFang.get()));
                 player.sendSystemMessage(Component.literal("1"));
+            }
+            if (player != null) {
+                equipCustomHelmet(player);
             }
             player.getCooldowns().addCooldown(this, 700);
 

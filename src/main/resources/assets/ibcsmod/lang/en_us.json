@@ -2,6 +2,8 @@
   "item.ibcsmod.warrior": "Warrior",
   "item.ibcsmod.ranger": "Ranger",
   "item.ibcsmod.gloryfang": "Gloryfang",
+  "item.ibcsmod.warrior_crown": "Warrior Crown",
+  "item.ibcsmod.warrior_robe": "Warrior Chestplate",
 
   "creativetab.ibcsmod.character_mod": "Character"
 }

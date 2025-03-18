@@ -23,6 +23,8 @@ public class ModCreativeNewTabs {
                         pOutput.accept(ModItems.Ranger.get());
                         pOutput.accept(ModItems.GloryFang.get());
                         pOutput.accept(ModItems.warrior.get());
+                        pOutput.accept(ModItems.Warrior_Crown.get());
+                        pOutput.accept(ModItems.Warrior_Chestplate.get());
                     })
 
                     .build());

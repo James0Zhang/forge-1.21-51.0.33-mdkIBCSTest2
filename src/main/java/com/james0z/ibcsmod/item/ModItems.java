@@ -26,6 +26,18 @@ public class ModItems {
     public static final RegistryObject<Item> GloryFang = ITEMS.register("gloryfang",
             () -> new GloryfangItem( new Item.Properties()
             .attributes(SwordItem.createAttributes(ModTier.Warrior, 9, -2.8F))));
+    public static final RegistryObject<Item> Warrior_Crown = ITEMS.register("warrior_crown",
+            ()-> new ArmorItem(ModArmor.WARRIOR_MATERIAL,ArmorItem.Type.HELMET,
+                    new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(18))));
+    public static final RegistryObject<Item> Warrior_Chestplate = ITEMS.register("warrior_chestplate",
+            ()-> new ArmorItem(ModArmor.WARRIOR_MATERIAL,ArmorItem.Type.CHESTPLATE,
+                    new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(18))));
+    //public static final RegistryObject<Item> Warrior_Helmet = ITEMS.register("warrior_helmet",
+            //()-> new ArmorItem(ModArmor.WARRIOR_MATERIAL,ArmorItem.Type.HELMET,
+                   // new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(18))));
+    //public static final RegistryObject<Item> Warrior_Helmet = ITEMS.register("warrior_helmet",
+            //()-> new ArmorItem(ModArmor.WARRIOR_MATERIAL,ArmorItem.Type.HELMET,
+                    //new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(18))));
 
 
 }
