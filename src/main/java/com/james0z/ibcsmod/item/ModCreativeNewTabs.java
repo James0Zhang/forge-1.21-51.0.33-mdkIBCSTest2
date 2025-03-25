@@ -25,6 +25,8 @@ public class ModCreativeNewTabs {
                         pOutput.accept(ModItems.warrior.get());
                         pOutput.accept(ModItems.Warrior_Crown.get());
                         pOutput.accept(ModItems.Warrior_Chestplate.get());
+                        pOutput.accept(ModItems.Warrior_Legging.get());
+                        pOutput.accept(ModItems.Warrior_Boots.get());
                     })
 
                     .build());

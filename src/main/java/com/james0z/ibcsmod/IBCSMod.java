@@ -1,5 +1,6 @@
 package com.james0z.ibcsmod;
 
+import com.james0z.ibcsmod.events.DashHandler;
 import com.james0z.ibcsmod.item.ModCreativeNewTabs;
 import com.james0z.ibcsmod.item.ModItems;
 import com.mojang.logging.LogUtils;
@@ -25,12 +26,16 @@ public class IBCSMod
     // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "ibcsmod";
     // Directly reference a slf4j logger
+
+
     private static final Logger LOGGER = LogUtils.getLogger();
     // Create a Deferred Register to hold Blocks which will all be registered under the "examplemod" namespace
 
 
     public IBCSMod()
     {
+        MinecraftForge.EVENT_BUS.register(DashHandler.class);
+
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(this::commonSetup);
 
