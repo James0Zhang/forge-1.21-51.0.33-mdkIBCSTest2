@@ -1,5 +1,6 @@
 package com.james0z.ibcsmod;
 
+import com.james0z.ibcsmod.entity.ModEntities;
 import com.james0z.ibcsmod.events.DashHandler;
 import com.james0z.ibcsmod.item.ModCreativeNewTabs;
 import com.james0z.ibcsmod.item.ModItems;
@@ -48,6 +49,7 @@ public class IBCSMod
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
+        ModEntities.ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }

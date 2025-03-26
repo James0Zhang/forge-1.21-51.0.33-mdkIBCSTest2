@@ -23,7 +23,7 @@ public class DashHandler {
         if (player != null && ModKeyBinding.DASH_KEY.isDown()) {
             if (player.getMainHandItem().getItem() instanceof GloryfangItem) {
                 Vec3 look = player.getLookAngle();
-                Vec3 dashVec = look.scale(2.5); // Adjust the dash distance
+                Vec3 dashVec = look.scale(1.5); // Adjust the dash distance
 
                 ItemStack heldItem = player.getMainHandItem();
                 if (heldItem.getItem() == ModItems.GloryFang.get()) {
@@ -31,6 +31,7 @@ public class DashHandler {
                     if (!player.getCooldowns().isOnCooldown(heldItem.getItem())) {
                         player.getCooldowns().addCooldown(heldItem.getItem(), 60); // 5 seconds cooldown
                         player.sendSystemMessage(Component.literal("Dash"));
+
                     } else {
                         player.sendSystemMessage(Component.literal("1"));
                     }
@@ -38,6 +39,7 @@ public class DashHandler {
                     player.level().playSound(null, player.blockPosition(),
                             net.minecraft.sounds.SoundEvents.ENDER_PEARL_THROW,
                             net.minecraft.sounds.SoundSource.PLAYERS, 1.0F, 1.0F);
+
                 }
 
 

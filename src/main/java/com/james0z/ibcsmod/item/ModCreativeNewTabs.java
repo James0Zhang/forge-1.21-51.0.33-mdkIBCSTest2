@@ -21,12 +21,19 @@ public class ModCreativeNewTabs {
                     .title(Component.translatable("creativetab.ibcsmod.character_mod"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.Ranger.get());
+                        pOutput.accept(ModItems.EchoWand.get());
                         pOutput.accept(ModItems.GloryFang.get());
+
                         pOutput.accept(ModItems.warrior.get());
                         pOutput.accept(ModItems.Warrior_Crown.get());
                         pOutput.accept(ModItems.Warrior_Chestplate.get());
                         pOutput.accept(ModItems.Warrior_Legging.get());
                         pOutput.accept(ModItems.Warrior_Boots.get());
+
+                        pOutput.accept(ModItems.Ranger_Hat.get());
+                        pOutput.accept(ModItems.Ranger_Shirt.get());
+                        pOutput.accept(ModItems.Ranger_Legging.get());
+                        pOutput.accept(ModItems.Ranger_Boots.get());
                     })
 
                     .build());

@@ -6,6 +6,11 @@
   "item.ibcsmod.warrior_chestplate": "Warrior Chestplate",
   "item.ibcsmod.warrior_legging": "Warrior Legging",
   "item.ibcsmod.warrior_boots": "Warrior Boots",
+  "item.ibcsmod.ranger_hat": "Ranger Hat",
+  "item.ibcsmod.ranger_shirt": "Ranger Shirt",
+  "item.ibcsmod.ranger_legging": "Ranger Legging",
+  "item.ibcsmod.ranger_boots": "Ranger Boots",
+  "item.ibcsmod.echowand": "Echowand",
 
   "creativetab.ibcsmod.character_mod": "Character"
 }
