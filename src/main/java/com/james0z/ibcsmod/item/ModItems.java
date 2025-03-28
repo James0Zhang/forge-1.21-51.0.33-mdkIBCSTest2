@@ -57,5 +57,5 @@ public class ModItems {
     public static final RegistryObject<Item> Ranger_Boots = ITEMS.register("ranger_boots",
             ()-> new ArmorItem(ModArmor.Ranger_Material,ArmorItem.Type.BOOTS,
                     new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(18))));
-    //Register custom item to the game
+    //Register custom item to the game using Registry and lambda
 }
