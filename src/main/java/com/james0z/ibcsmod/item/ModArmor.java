@@ -27,7 +27,7 @@ public class ModArmor {
                 attribute.put(ArmorItem.Type.HELMET, 5);
                 attribute.put(ArmorItem.Type.BODY, 11);
             }), 15, 4f, 0.1f, () -> Items.NETHERITE_INGOT);
-
+    // Register armor attributes including helmet, chestplate, leggings, boots, and the repair item. This also includes the defense toughness and knockback resistance for the whole body
     public static final Holder<ArmorMaterial> Ranger_Material = register("ranger", Util.make(new EnumMap<>(ArmorItem.Type.class),
             attribute -> {
                 attribute.put(ArmorItem.Type.BOOTS, 3);
@@ -36,7 +36,7 @@ public class ModArmor {
                 attribute.put(ArmorItem.Type.HELMET, 3);
                 attribute.put(ArmorItem.Type.BODY, 9);
             }), 10, 2f, 0.1f, () -> Items.NETHERITE_INGOT);
-
+    
     private static Holder<ArmorMaterial> register(String name, EnumMap<ArmorItem.Type, Integer> typeProtection,
                                                   int enchantability, float toughness, float knockbackResistance,
                                                   Supplier<Item> ingredientItem) {
@@ -54,3 +54,4 @@ public class ModArmor {
                 new ArmorMaterial(typeProtection, enchantability, equipSound, ingredient, layers, toughness, knockbackResistance));
     }
 }
+        //Locate and apply attribute, sound, and layer to the game. Then return as a reference
