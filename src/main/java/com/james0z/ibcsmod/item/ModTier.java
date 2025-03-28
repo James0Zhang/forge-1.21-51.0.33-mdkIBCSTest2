@@ -15,3 +15,4 @@ import org.apache.commons.lang3.ObjectUtils;
 
 public class ModTier {
     public static final Tier Warrior = new ForgeTier(1400,2,2.4F,20, BlockTags.MINEABLE_WITH_AXE, ()->Ingredient.of(Items.NETHERITE_INGOT), BlockTags.ANVIL);}
+//Create a tier for the warrior's weapon
