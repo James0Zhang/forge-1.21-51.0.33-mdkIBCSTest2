@@ -26,10 +26,10 @@ public class GloryfangItem extends Item{
     public InteractionResult useOn(UseOnContext pContext) {
         Level level = pContext.getLevel();
         Player player = pContext.getPlayer();
-
+        //get level and player
 
         if (!level.isClientSide) {
-            // Apply a strength effect to the player for 30 seconds (600 ticks)
+            // Apply a strength effect to the player and get a cooldown
             player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 100, 5));
 
             player.sendSystemMessage(Component.literal("You feel a surge of power!"));
@@ -38,5 +38,6 @@ public class GloryfangItem extends Item{
         }
         return super.useOn(pContext);
     }
+    
 
 }
