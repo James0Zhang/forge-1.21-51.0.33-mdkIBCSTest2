@@ -16,8 +16,18 @@ public class ModKeyBinding {
             "key.categories.ibcsmod"
     );
 
+    public static final String CATEGORY_MOD = "key.categories.ibcsmod";
+    public static final KeyMapping SUMMON_GOLEM_KEY = new KeyMapping(
+            "key.ibcsmod.summon_golem",
+            GLFW.GLFW_KEY_G, // Change to "G" key
+            CATEGORY_MOD
+    );
+
+
+
     @SubscribeEvent
     public static void registerKeyBindings(RegisterKeyMappingsEvent event) {
         event.register(DASH_KEY);
+        event.register(SUMMON_GOLEM_KEY);
     }
 }

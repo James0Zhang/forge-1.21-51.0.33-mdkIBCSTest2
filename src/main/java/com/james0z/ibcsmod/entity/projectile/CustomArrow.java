@@ -15,8 +15,8 @@ public class CustomArrow extends AbstractArrow {
     public CustomArrow(EntityType<? extends CustomArrow> entityType, Level level) {
         super(entityType, level);
     }
-    public CustomArrow(EntityType<? extends AbstractArrow> entityType, LivingEntity shooter, Level level) {
-        super(entityType, level);}
+    public CustomArrow(EntityType<? extends AbstractArrow> entityType, LivingEntity shooter, Level level, ItemStack itemStack){
+        super(entityType,shooter, level, new ItemStack(Items.ARROW),itemStack);}
 
     @Override
     protected ItemStack getPickupItem() {

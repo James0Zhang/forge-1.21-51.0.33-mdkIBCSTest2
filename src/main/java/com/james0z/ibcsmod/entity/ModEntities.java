@@ -14,7 +14,7 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<CustomArrow>> CUSTOM_ARROW =
             ENTITIES.register("custom_arrow",
-                    () -> EntityType.Builder.<CustomArrow>of(CustomArrow::new, MobCategory.MISC)
+                    () -> EntityType.Builder.<CustomArrow>of((entityType, level) -> new CustomArrow(entityType, level), MobCategory.MISC)
                             .sized(0.5F, 0.5F) // Arrow size
                             .build("custom_arrow"));}
 

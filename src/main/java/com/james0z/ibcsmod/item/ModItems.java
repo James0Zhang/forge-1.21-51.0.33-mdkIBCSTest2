@@ -1,6 +1,7 @@
 package com.james0z.ibcsmod.item;
 
 import com.james0z.ibcsmod.IBCSMod;
+import com.james0z.ibcsmod.item.custom.EchowandItem;
 import com.james0z.ibcsmod.item.custom.GloryfangItem;
 import com.james0z.ibcsmod.item.custom.RangerItem;
 import com.james0z.ibcsmod.item.custom.warriorItem;
@@ -28,7 +29,7 @@ public class ModItems {
     public static final RegistryObject<Item> Ranger = ITEMS.register("ranger",
             ()-> new RangerItem(new Item.Properties().durability(64)));
     public static final RegistryObject<Item> EchoWand = ITEMS.register("echowand",
-            ()-> new BowItem(new Item.Properties().durability(500)));
+            ()-> new EchowandItem(new Item.Properties().durability(500)));
 
 
     public static final RegistryObject<Item> Warrior_Crown = ITEMS.register("warrior_crown",

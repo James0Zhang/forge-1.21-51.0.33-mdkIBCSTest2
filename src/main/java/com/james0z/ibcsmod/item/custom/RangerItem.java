@@ -9,6 +9,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 
 public class RangerItem extends Item {
@@ -24,6 +25,7 @@ public class RangerItem extends Item {
         }
         return true;
     }
+
     public void equipCustomHelmet(Player player) {
         // Create the helmet item
         ItemStack helmet = new ItemStack(ModItems.Ranger_Hat.get());
@@ -47,6 +49,7 @@ public class RangerItem extends Item {
         Player player = pContext.getPlayer();
 
 
+
         if (!level.isClientSide) {
 
             player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 6000, 2));
@@ -56,7 +59,7 @@ public class RangerItem extends Item {
 
             if (hasEchowand(player)) {
                 player.getInventory().add(new ItemStack(ModItems.EchoWand.get()));
-                player.sendSystemMessage(Component.literal("1"));
+
             }
             if (player != null) {
                 equipCustomHelmet(player);

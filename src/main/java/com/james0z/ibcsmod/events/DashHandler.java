@@ -2,9 +2,12 @@ package com.james0z.ibcsmod.events;
 
 import com.james0z.ibcsmod.client.ModKeyBinding;
 import com.james0z.ibcsmod.item.ModItems;
+import com.james0z.ibcsmod.item.custom.EchowandItem;
 import com.james0z.ibcsmod.item.custom.GloryfangItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
@@ -42,8 +45,31 @@ public class DashHandler {
 
                 }
 
-
             }
         }
+        else if(player != null && ModKeyBinding.SUMMON_GOLEM_KEY.isDown()){
+
+            if (player.getMainHandItem().getItem() instanceof EchowandItem){
+                    // Create the Iron Golem at the player's position
+                    IronGolem golem = EntityType.IRON_GOLEM.create(player.level());
+
+                    if (golem != null) {
+                        golem.moveTo(player.getX(), player.getY(), player.getZ(), 0, 0);
+                        player.level().addFreshEntity(golem);
+                    }
+                ItemStack heldItem = player.getMainHandItem();
+                if (heldItem.getItem() == ModItems.EchoWand.get()) {
+                    // Check if cooldown is over
+                    if (!player.getCooldowns().isOnCooldown(heldItem.getItem())) {
+                        player.getCooldowns().addCooldown(heldItem.getItem(), 60); // 5 seconds cooldown
+                        player.sendSystemMessage(Component.literal("Spawn"));
+
+                    } else {
+                        player.sendSystemMessage(Component.literal("1"));
+                    }
+
+                }
+            }
+
     }
-}
+}}

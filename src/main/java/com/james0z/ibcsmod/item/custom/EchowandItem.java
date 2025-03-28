@@ -2,12 +2,23 @@ package com.james0z.ibcsmod.item.custom;
 
 import com.james0z.ibcsmod.entity.ModEntities;
 import com.james0z.ibcsmod.entity.projectile.CustomArrow;
+import net.minecraft.core.Holder;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.BowItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Items;
+
+import java.util.List;
+
+import static net.minecraft.world.item.enchantment.Enchantments.FLAME;
 
 public class EchowandItem extends BowItem{
     public EchowandItem(Properties properties){
@@ -15,34 +26,33 @@ public class EchowandItem extends BowItem{
     }
 
 
+    public void onCraftedBy(ItemStack stack, Level level, Player player) {
+        super.onCraftedBy(stack, level, player);
+
+        // Get the Holder reference for the enchantment
+        Holder.Reference<Enchantment> powerEnchantment = level.registryAccess()
+                .registryOrThrow(Registries.ENCHANTMENT)
+                .getHolderOrThrow(Enchantments.POWER);
+        Holder.Reference<Enchantment> flameEnchantment = level.registryAccess()
+                .registryOrThrow(Registries.ENCHANTMENT)
+                .getHolderOrThrow(FLAME);
+        // Apply the enchantment using the correct Holder
+        stack.enchant(powerEnchantment, 5);
+        stack.enchant(flameEnchantment,1);
+    }
+
     @Override
-    public void releaseUsing(ItemStack stack, Level level, LivingEntity shooter, int chargeTime) {
-        if (!(shooter instanceof Player player)) return;
+    public boolean isFoil(ItemStack stack) {
+        return true; // Makes the bow shine like an enchanted item
+    }
 
-        boolean infiniteArrows = player.getAbilities().instabuild || player.getInventory().contains(Items.ARROW.getDefaultInstance());
 
-        if (!level.isClientSide()) {
-            CustomArrow arrow = new CustomArrow(ModEntities.CUSTOM_ARROW.get(), level);
+    public AbstractArrow createArrow(Level level, ItemStack stack, LivingEntity shooter) {
+        return new CustomArrow(ModEntities.CUSTOM_ARROW.get(), level); // Shoots custom arrow
+    }
 
-            // Set the arrow spawn position (player's eye level)
-            arrow.setPos(shooter.getX(), shooter.getEyeY() - 0.1, shooter.getZ());
-
-            // Calculate charge time to determine arrow strength
-            float power = BowItem.getPowerForTime(chargeTime);
-            arrow.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, power * 3.0F, 1.0F);
-
-            // Apply effects to the arrow if needed
-            arrow.setBaseDamage(5.0D);
-            arrow.setTicksFrozen(3);
-            arrow.setRemainingFireTicks(3);// Set on fire for 3 seconds
-
-            // Spawn the arrow in the world
-            level.addFreshEntity(arrow);
-
-            // Consume an arrow if the player is not in creative mode
-            if (!infiniteArrows) {
-                player.getInventory().removeItem(Items.ARROW.getDefaultInstance());
-            }
-        }
+    @Override
+    public boolean useOnRelease(ItemStack stack) {
+        return true; // Makes it function like a bow
     }
 }
