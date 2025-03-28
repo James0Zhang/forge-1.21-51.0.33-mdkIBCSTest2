@@ -19,7 +19,7 @@ public class ModItems {
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
     }
-
+    //Register the Item function
     public static final RegistryObject<Item> warrior = ITEMS.register("warrior",
             ()-> new warriorItem(new Item.Properties().durability(64)));
     public static final RegistryObject<Item> GloryFang = ITEMS.register("gloryfang",
@@ -57,6 +57,5 @@ public class ModItems {
     public static final RegistryObject<Item> Ranger_Boots = ITEMS.register("ranger_boots",
             ()-> new ArmorItem(ModArmor.Ranger_Material,ArmorItem.Type.BOOTS,
                     new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(18))));
-
-
+    //Register custom item to the game
 }
