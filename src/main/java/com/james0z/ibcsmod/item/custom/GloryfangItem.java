@@ -32,7 +32,6 @@ public class GloryfangItem extends Item{
             // Apply a strength effect to the player and get a cooldown
             player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 100, 5));
 
-            player.sendSystemMessage(Component.literal("You feel a surge of power!"));
             player.getCooldowns().addCooldown(this, 200);
 
         }
