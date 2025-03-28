@@ -25,6 +25,7 @@ public class RangerItem extends Item {
         }
         return true;
     }
+    // Check if the player has Echowand in inventory
 
     public void equipCustomHelmet(Player player) {
         // Create the helmet item
@@ -39,10 +40,8 @@ public class RangerItem extends Item {
         player.getInventory().armor.set(1, legging);
         player.getInventory().armor.set(0, boots);
 
-        // Notify the player (optional)
-        player.displayClientMessage(Component.literal("You are now equipped with the armor!"), true);
     }
-
+    // give and equip player armor
     @Override
     public InteractionResult useOn(UseOnContext pContext) {
         Level level = pContext.getLevel();
@@ -68,5 +67,6 @@ public class RangerItem extends Item {
 
         }
         return super.useOn(pContext);
+        //give player buffs and Echowand
     }
 }
