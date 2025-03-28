@@ -12,9 +12,10 @@ public class ModKeyBinding {
     public static final KeyMapping DASH_KEY = new KeyMapping(
             "key.ibcsmod.dash",
             InputConstants.Type.KEYSYM,
-            GLFW.GLFW_KEY_R, // Change this key if needed
+            GLFW.GLFW_KEY_R, 
             "key.categories.ibcsmod"
     );
+    //bind DASH_KEY to key r
 
     public static final String CATEGORY_MOD = "key.categories.ibcsmod";
     public static final KeyMapping SUMMON_GOLEM_KEY = new KeyMapping(
@@ -30,4 +31,5 @@ public class ModKeyBinding {
         event.register(DASH_KEY);
         event.register(SUMMON_GOLEM_KEY);
     }
+    //register DASH_KEY
 }
