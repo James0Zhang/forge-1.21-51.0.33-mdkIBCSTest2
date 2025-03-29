@@ -32,7 +32,7 @@ public class DashHandler {
                 if (heldItem.getItem() == ModItems.GloryFang.get()) {
                     // Check if cooldown is over
                     if (!player.getCooldowns().isOnCooldown(heldItem.getItem())) {
-                        player.getCooldowns().addCooldown(heldItem.getItem(), 60); // 5 seconds cooldown
+                        player.getCooldowns().addCooldown(heldItem.getItem(), 60); 
                         player.sendSystemMessage(Component.literal("Dash"));
 
                     } else {
@@ -44,7 +44,7 @@ public class DashHandler {
                             net.minecraft.sounds.SoundSource.PLAYERS, 1.0F, 1.0F);
 
                 }
-
+                //Assign the function of DASH_KEY as dashing forward with a sound
             }
         }
         else if(player != null && ModKeyBinding.SUMMON_GOLEM_KEY.isDown()){

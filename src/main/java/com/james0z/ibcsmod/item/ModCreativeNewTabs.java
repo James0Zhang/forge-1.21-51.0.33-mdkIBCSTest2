@@ -15,7 +15,7 @@ import javax.management.monitor.CounterMonitor;
 public class ModCreativeNewTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, IBCSMod.MOD_ID);
-
+//Register creative mod tab
     public static final RegistryObject<CreativeModeTab> CHARACTER_MOD_TAB = CREATIVE_MODE_TABS.register("character",
             ()-> CreativeModeTab.builder().icon(()-> new ItemStack(ModItems.warrior.get()))
                     .title(Component.translatable("creativetab.ibcsmod.character_mod"))
@@ -37,6 +37,7 @@ public class ModCreativeNewTabs {
                     })
 
                     .build());
+    //The lambda function implements the display and the title of the tab, and the pOutput adds the item to it.
     public static void register(IEventBus eventBus){
         CREATIVE_MODE_TABS.register(eventBus);
     }

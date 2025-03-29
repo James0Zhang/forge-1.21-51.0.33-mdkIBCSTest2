@@ -22,6 +22,7 @@ public class warriorItem extends Item {
             }
         }
         return true;
+        // Check if player has Gloryfang in the inventory
     }
     public void equipCustomHelmet(Player player) {
         // Create the helmet item
@@ -36,9 +37,8 @@ public class warriorItem extends Item {
         player.getInventory().armor.set(1, legging);
         player.getInventory().armor.set(0, boots);
 
-        // Notify the player (optional)
-        player.displayClientMessage(Component.literal("You are now equipped with the armor!"), true);
     }
+    //give and equip player with armor
 
     @Override
     public InteractionResult useOn(UseOnContext pContext) {
@@ -64,5 +64,6 @@ public class warriorItem extends Item {
 
         }
         return super.useOn(pContext);
+        //give player buffs and Gloryfang
     }
 }

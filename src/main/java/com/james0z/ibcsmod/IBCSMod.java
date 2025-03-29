@@ -64,9 +64,7 @@ public class IBCSMod
             event.accept(ModItems.warrior);
             event.accept(ModItems.Ranger);
             event.accept(ModItems.GloryFang);}
-
-        if(event.getTabKey() == CreativeModeTabs.SPAWN_EGGS){
-            }
+    //Add items to the COMBAT mode in creative tab
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
